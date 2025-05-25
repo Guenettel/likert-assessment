@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leadership Likert Assessment with Recommendations</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h2 { color: #2a4d69; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 30px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background-color: #f2f2f2; }
+    .dimension { margin-top: 40px; }
+    #results { margin-top: 40px; font-weight: bold; white-space: pre-line; }
+  </style>
+</head>
+<body>
+  <h1>Leadership Likert Assessment</h1>
+  <p>Please rate your agreement with the following statements (1 = Strongly Disagree, 5 = Strongly Agree).</p>
+
+  <form id="likertForm">
+    <!-- Repeatable function to generate dimension block -->
+    <script>
+      const dimensions = {
+        "Self-Awareness and Personal Leadership": ['sa1','sa2','sa3','sa4','sa5'],
+        "Communication and Influence": ['ci1','ci2','ci3','ci4','ci5'],
+        "Vision and Strategic Thinking": ['vs1','vs2','vs3','vs4','vs5'],
+        "Team Development and Engagement": ['td1','td2','td3','td4','td5'],
+        "Accountability and Results": ['ar1','ar2','ar3','ar4','ar5']
+      };
+    </script>
+
+    <div class="dimension">
+      <h2>Communication and Influence</h2>
+      <table>
+        <tr><th>Statement</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+        <tr><td>I communicate clearly with my team.</td><td><input type="radio" name="ci1" value="1"></td><td><input type="radio" name="ci1" value="2"></td><td><input type="radio" name="ci1" value="3"></td><td><input type="radio" name="ci1" value="4"></td><td><input type="radio" name="ci1" value="5"></td></tr>
+        <tr><td>I listen actively to others' viewpoints.</td><td><input type="radio" name="ci2" value="1"></td><td><input type="radio" name="ci2" value="2"></td><td><input type="radio" name="ci2" value="3"></td><td><input type="radio" name="ci2" value="4"></td><td><input type="radio" name="ci2" value="5"></td></tr>
+        <tr><td>I give constructive feedback effectively.</td><td><input type="radio" name="ci3" value="1"></td><td><input type="radio" name="ci3" value="2"></td><td><input type="radio" name="ci3" value="3"></td><td><input type="radio" name="ci3" value="4"></td><td><input type="radio" name="ci3" value="5"></td></tr>
+        <tr><td>I can influence others positively.</td><td><input type="radio" name="ci4" value="1"></td><td><input type="radio" name="ci4" value="2"></td><td><input type="radio" name="ci4" value="3"></td><td><input type="radio" name="ci4" value="4"></td><td><input type="radio" name="ci4" value="5"></td></tr>
+        <tr><td>I adapt my communication style to the audience.</td><td><input type="radio" name="ci5" value="1"></td><td><input type="radio" name="ci5" value="2"></td><td><input type="radio" name="ci5" value="3"></td><td><input type="radio" name="ci5" value="4"></td><td><input type="radio" name="ci5" value="5"></td></tr>
+      </table>
+    </div>
+
+    <!-- Repeat dimension blocks for Vision, Team, and Accountability -->
+    <!-- Vision -->
+    <div class="dimension">
+      <h2>Vision and Strategic Thinking</h2>
+      <table>
+        <tr><th>Statement</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+        <tr><td>I set a clear vision for my team.</td><td><input type="radio" name="vs1" value="1"></td><td><input type="radio" name="vs1" value="2"></td><td><input type="radio" name="vs1" value="3"></td><td><input type="radio" name="vs1" value="4"></td><td><input type="radio" name="vs1" value="5"></td></tr>
+        <tr><td>I align goals with organizational priorities.</td><td><input type="radio" name="vs2" value="1"></td><td><input type="radio" name="vs2" value="2"></td><td><input type="radio" name="vs2" value="3"></td><td><input type="radio" name="vs2" value="4"></td><td><input type="radio" name="vs2" value="5"></td></tr>
+        <tr><td>I anticipate future challenges and opportunities.</td><td><input type="radio" name="vs3" value="1"></td><td><input type="radio" name="vs3" value="2"></td><td><input type="radio" name="vs3" value="3"></td><td><input type="radio" name="vs3" value="4"></td><td><input type="radio" name="vs3" value="5"></td></tr>
+        <tr><td>I use data to inform decisions.</td><td><input type="radio" name="vs4" value="1"></td><td><input type="radio" name="vs4" value="2"></td><td><input type="radio" name="vs4" value="3"></td><td><input type="radio" name="vs4" value="4"></td><td><input type="radio" name="vs4" value="5"></td></tr>
+        <tr><td>I consider long-term impacts in decisions.</td><td><input type="radio" name="vs5" value="1"></td><td><input type="radio" name="vs5" value="2"></td><td><input type="radio" name="vs5" value="3"></td><td><input type="radio" name="vs5" value="4"></td><td><input type="radio" name="vs5" value="5"></td></tr>
+      </table>
+    </div>
+
+    <!-- Team Development -->
+    <div class="dimension">
+      <h2>Team Development and Engagement</h2>
+      <table>
+        <tr><th>Statement</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+        <tr><td>I empower team members to own their work.</td><td><input type="radio" name="td1" value="1"></td><td><input type="radio" name="td1" value="2"></td><td><input type="radio" name="td1" value="3"></td><td><input type="radio" name="td1" value="4"></td><td><input type="radio" name="td1" value="5"></td></tr>
+        <tr><td>I recognize team achievements regularly.</td><td><input type="radio" name="td2" value="1"></td><td><input type="radio" name="td2" value="2"></td><td><input type="radio" name="td2" value="3"></td><td><input type="radio" name="td2" value="4"></td><td><input type="radio" name="td2" value="5"></td></tr>
+        <tr><td>I support professional development of my team.</td><td><input type="radio" name="td3" value="1"></td><td><input type="radio" name="td3" value="2"></td><td><input type="radio" name="td3" value="3"></td><td><input type="radio" name="td3" value="4"></td><td><input type="radio" name="td3" value="5"></td></tr>
+        <tr><td>I promote an inclusive and collaborative culture.</td><td><input type="radio" name="td4" value="1"></td><td><input type="radio" name="td4" value="2"></td><td><input type="radio" name="td4" value="3"></td><td><input type="radio" name="td4" value="4"></td><td><input type="radio" name="td4" value="5"></td></tr>
+        <tr><td>I handle conflict constructively.</td><td><input type="radio" name="td5" value="1"></td><td><input type="radio" name="td5" value="2"></td><td><input type="radio" name="td5" value="3"></td><td><input type="radio" name="td5" value="4"></td><td><input type="radio" name="td5" value="5"></td></tr>
+      </table>
+    </div>
+
+    <!-- Accountability -->
+    <div class="dimension">
+      <h2>Accountability and Results</h2>
+      <table>
+        <tr><th>Statement</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+        <tr><td>I take responsibility for my results.</td><td><input type="radio" name="ar1" value="1"></td><td><input type="radio" name="ar1" value="2"></td><td><input type="radio" name="ar1" value="3"></td><td><input type="radio" name="ar1" value="4"></td><td><input type="radio" name="ar1" value="5"></td></tr>
+        <tr><td>I set and communicate clear expectations.</td><td><input type="radio" name="ar2" value="1"></td><td><input type="radio" name="ar2" value="2"></td><td><input type="radio" name="ar2" value="3"></td><td><input type="radio" name="ar2" value="4"></td><td><input type="radio" name="ar2" value="5"></td></tr>
+        <tr><td>I monitor progress and follow through.</td><td><input type="radio" name="ar3" value="1"></td><td><input type="radio" name="ar3" value="2"></td><td><input type="radio" name="ar3" value="3"></td><td><input type="radio" name="ar3" value="4"></td><td><input type="radio" name="ar3" value="5"></td></tr>
+        <tr><td>I act decisively when needed.</td><td><input type="radio" name="ar4" value="1"></td><td><input type="radio" name="ar4" value="2"></td><td><input type="radio" name="ar4" value="3"></td><td><input type="radio" name="ar4" value="4"></td><td><input type="radio" name="ar4" value="5"></td></tr>
+        <tr><td>I remain resilient under pressure.</td><td><input type="radio" name="ar5" value="1"></td><td><input type="radio" name="ar5" value="2"></td><td><input type="radio" name="ar5" value="3"></td><td><input type="radio" name="ar5" value="4"></td><td><input type="radio" name="ar5" value="5"></td></tr>
+      </table>
+    </div>
+
+    <button type="button" onclick="calculateScores()">Submit</button>
+  </form>
+
+  <div id="results"></div>
+
+  <script>
+    function getRecommendation(score) {
+      if (score < 15) return "Development Needed (Consider foundational Pro-D courses).";
+      if (score < 21) return "Developing Well (Explore intermediate Pro-D learning options).";
+      return "Strength Area (Consider mentoring or advanced Pro-D courses).";
+    }
+
+    function calculateScores() {
+      const dimensions = {
+        "Self-Awareness and Personal Leadership": ['sa1','sa2','sa3','sa4','sa5'],
+        "Communication and Influence": ['ci1','ci2','ci3','ci4','ci5'],
+        "Vision and Strategic Thinking": ['vs1','vs2','vs3','vs4','vs5'],
+        "Team Development and Engagement": ['td1','td2','td3','td4','td5'],
+        "Accountability and Results": ['ar1','ar2','ar3','ar4','ar5']
+      };
+
+      let output = '';
+      let allComplete = true;
+
+      for (const [label, group] of Object.entries(dimensions)) {
+        let score = 0;
+        for (let name of group) {
+          const radios = document.getElementsByName(name);
+          let found = false;
+          for (let radio of radios) {
+            if (radio.checked) {
+              score += parseInt(radio.value);
+              found = true;
+              break;
+            }
+          }
+          if (!found) allComplete = false;
+        }
+        output += `${label}\nScore: ${score}/25\nRecommendation: ${getRecommendation(score)}\n\n`;
+      }
+
+      document.getElementById('results').textContent = allComplete ? output : 'Please complete all questions before submitting.';
+    }
+  </script>
+</body>
+</html>
